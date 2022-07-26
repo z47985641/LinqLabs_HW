@@ -57,7 +57,6 @@ namespace LinqLabs
             this.ordersTableAdapter1 = new LinqLabs.DataSet1TableAdapters.OrdersTableAdapter();
             this.DsOrder = new LinqLabs.DataSet1();
             this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -174,7 +173,6 @@ namespace LinqLabs
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox2);
             this.groupBox2.Controls.Add(this.button5);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.Cb_year);
@@ -252,6 +250,7 @@ namespace LinqLabs
             this.button1.TabIndex = 7;
             this.button1.Text = " FileInfo[]  .Log  擋";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -263,6 +262,7 @@ namespace LinqLabs
             this.button2.Text = "FileInfo[]   - 2017 Created - order";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -273,6 +273,7 @@ namespace LinqLabs
             this.button3.TabIndex = 7;
             this.button3.Text = "FileInfo[]   - 大檔案";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -368,14 +369,6 @@ namespace LinqLabs
             this.ordersBindingSource.DataMember = "Orders";
             this.ordersBindingSource.DataSource = this.DsOrder;
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(418, 120);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(164, 25);
-            this.textBox2.TabIndex = 8;
-            this.textBox2.Text = "10";
-            // 
             // Frm作業
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -438,6 +431,5 @@ namespace LinqLabs
         private DataSet1 DsOrder;
         private System.Windows.Forms.Button BtnSet;
         private System.Windows.Forms.BindingSource ordersBindingSource;
-        private System.Windows.Forms.TextBox textBox2;
     }
 }

@@ -93,6 +93,42 @@ namespace LinqLabs
             //下一頁
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(@"c:\windows");
+
+            System.IO.FileInfo[] files = dir.GetFiles();
+
+            this.dataGridView1.DataSource = files;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(@"c:\windows");
+
+            System.IO.FileInfo[] files = dir.GetFiles();
+
+            var F_show = from f in files
+                         where f.CreationTime.Year ==  2017 
+                         select f;
+            dataGridView1.DataSource = F_show.ToList();
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(@"c:\windows");
+
+            System.IO.FileInfo[] files = dir.GetFiles();
+
+            var F_show = from f in files
+                         where f.Length > 3000000
+                         orderby f.Length
+                         select f;
+            dataGridView1.DataSource = F_show.ToList();
+        }
+
         private void button9_Click(object sender, EventArgs e)
         {
             num = int.Parse(textBox1.Text);
